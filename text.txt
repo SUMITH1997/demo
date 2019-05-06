@@ -3,3 +3,238 @@ THAYYIL (H0
 CHAKKUPALLAM PO
 KUNKIRIPETTY
 IDUKKI DIST
+
+prime or not  
+number=43 
+i=2 
+f=0 
+while test $i -le `expr $number / 2`  
+do
+if test `expr $number % $i` -eq 0  
+then
+f=1 
+fi
+i=`expr $i + 1` 
+done
+if test $f -eq 1  
+then
+echo "Not Prime"
+else
+echo "Prime"
+fi
+
+
+
+echo "Enter a number"
+read num
+
+fact=1
+
+while [ $num -gt 1 ]
+do
+  fact=$((fact * num))  #fact = fact * num
+  num=$((num - 1))      #num = num - 1
+done
+
+echo $fact
+
+
+
+clear
+echo "Enter a string to be entered:"
+read str
+echo
+len=`echo $str | wc -c`
+len=`expr $len - 1`
+i=1
+j=`expr $len / 2`
+while test $i -le $j
+do
+k=`echo $str | cut -c $i`
+l=`echo $str | cut -c $len`
+if test $k != $l
+then
+echo "String is not palindrome"
+exit
+fi
+i=`expr $i + 1`
+len=`expr $len - 1`
+done
+echo "String is palindrome"
+
+
+
+
+N=6 
+  
+# First Number of the 
+# Fibonacci Series 
+a=0 
+  
+# Second Number of the 
+# Fibonacci Series 
+b=1  
+   
+echo "The Fibonacci series is : "
+   
+for (( i=0; i<N; i++ )) 
+do
+    echo -n "$a "
+    fn=$((a + b)) 
+    a=$b 
+    b=$fn 
+done
+
+
+
+echo ”enter the number”
+read n
+q=$n
+a=0
+while [ $q – gt 0 ]
+do
+r= `expr $q % 10 `
+q= `expr $q / 10 `
+a=`expr $a + $r /* $r /*$r `
+done
+if [ $a=$n ]
+then
+echo “the number $n is armstrong number”
+else
+echo “the number $n is not armstrong number”
+fi
+
+
+Num=123 
+g=$Num 
+  
+# store the sum of  
+# digits 
+s=0 
+  
+# use while loop to 
+# caclulate the sum 
+# of all digits 
+while [ $Num -gt 0 ] 
+do
+    # get Remainder 
+    k=$(( $Num % 10 ))  
+  
+    # get next digit 
+    Num=$(( $Num / 10 )) 
+  
+    # calculate sum of 
+    # digit   
+    s=$(( $s + $k ))  
+done
+echo  "sum of digits of $g is : $s"
+
+
+
+echo -n "Enter numnber : "
+read n
+ 
+rem=$(( $n % 2 ))
+ 
+if [ $rem -eq 0 ]
+then
+  echo "$n is even number"
+else
+  echo "$n is odd number"
+fi
+
+
+
+  
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num           #get number
+  sum=$((sum + num)) #sum+=num
+  i=$((i + 1))
+done
+echo $sum
+
+
+
+clear
+echo "Enter a number"
+read n
+sd=0
+rev=0
+
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 ))
+    rev=$(( $rev *\ 10 + $sd ))
+    n=$(( $n / 10 ))
+done
+
+echo "Reverse number of entered digit is $rev"
+
+
+
+
+
+echo "enter first number"
+read first
+echo "enter second number"
+read sec
+echo "enter third number"
+read third
+if [ $first -gt $sec ] ; then
+if [ $first -gt $third ] ; then
+echo -e " $first is greatest number "
+else
+echo -e " $third is greatest number "
+fi
+else
+if [ $sec -gt $third ] ; then
+echo -e " $sec is greatest number "
+else
+echo -e " $third is greatest number "
+fi
+fi
+
+
+
+
+#reading data from the user 
+read - p 'Enter a : ' a 
+           read
+    - p 'Enter b : ' b 
+  
+          add 
+    = $((a + b)) 
+        echo Addition of a and b are $add 
+  
+            sub 
+    = $((a - b)) 
+        echo Subtraction of a and b are $sub 
+  
+            mul 
+    = $((a * b)) 
+        echo Multiplication of a and b are $mul 
+  
+            div 
+    = $((a / b)) 
+        echo division of a and b are $div 
+  
+            mod 
+    = $((a % b)) 
+          echo Modulus of a 
+      and b are $mod 
+  
+      ((++a)) 
+          echo Increment 
+          operator when applied on "a" results into a = $a 
+  
+      ((--b)) 
+          echo Decrement 
+          operator when applied on "b" results into b = $b
